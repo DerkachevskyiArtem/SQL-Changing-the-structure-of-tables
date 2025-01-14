@@ -1,6 +1,6 @@
 CREATE TABLE workers (
   id SERIAL PRIMARY KEY,
-  full_name VARCHAR(255) NOT NULL,
+  full_name VARCHAR(255) NOT NULL  CHECK (full_name != ''),
   department VARCHAR(255),
   birthday DATE CHECK (birthday <= current_date - INTERVAL '18 years' AND birthday >= '1895-01-06'),
   salary NUMERIC(10, 2)
